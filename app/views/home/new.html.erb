@@ -1,0 +1,46 @@
+
+
+<%= form_with url:"/search/user", method: :post do |form| %>
+    <div style="margin-left:200px;">
+         <%= form.label :search, "Search For:" %>
+         <%= form.text_field :search  %>
+    </div>
+
+    <div style="margin-left:200px;">
+         <%= form.check_box :java %>
+         <%= form.label :java, "Java"  %>
+          <%= form.check_box :cpp %>
+         <%= form.label :cpp, "CPP"  %>
+    </div>
+
+    <div style="margin-left:200px;">
+         <%= form.radio_button :gender, "male" %>
+         <%= form.label :gender, "Male"  %>
+          <%= form.radio_button :gender, "female" %>
+         <%= form.label :gender, "Female"  %>
+    </div>
+
+    <div style="margin-left:200px;">
+         <%= form.text_area :message, size: "50*20", placeholder: "enter your address" %>
+    </div>
+
+    <div style="margin-left:200px;width:200px;">
+         <%= form.number_field :price, in: 1.0..20.0, step:0.5, placeholder: "enter your price" %>
+    </div>
+
+    <div style="margin-left:200px;width:200px;">
+         <%= form.range_field :price, in: 1..200, placeholder: "enter your price" %>
+    </div>
+
+    <div style="margin-left:200px;width:200px;">
+         <%= form.datetime_local_field :price %>
+    </div>
+
+    <div style="margin-left:200px;width:200px;">
+         <%= form.color_field :favorite_color %>
+    </div>
+
+    <div style="margin-left:200px;">
+         <%= form.submit "Search"  %>
+    </div>
+<% end %>

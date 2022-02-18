@@ -1,0 +1,15 @@
+<h1>People#new</h1>
+
+
+<%= form_with model: @people do |person_form| %>
+  <%= person_form.text_field :name %>
+<%= person_form.select :cities, [["select","se"],["Berlin","BE"],["Madrid","MAD"],["Tokyo","TOK"]], selected:"TOK" %>
+
+<%= person_form.select :cities, {
+    "europe" => [["madrid","ME"],["chicago","CHI"]],
+    "south amerika" => [["tokyo","TOK"]]
+}, selected: "ME" %><br><br>
+<%= person_form.time_zone_select :time_zone %>  
+<% end %>
+
+
